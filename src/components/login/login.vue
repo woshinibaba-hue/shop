@@ -36,7 +36,7 @@ export default {
       LoginFormRules : {
         username : [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 6, message: '长度在 3 到 6 个字符', trigger: 'blur' }
+          { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' }
         ],
         password : [
           { required: true, message: '请输入密码', trigger: 'blur' },
@@ -59,14 +59,28 @@ export default {
         if (!valid) return;
         // 通过解构赋值，将里面的data对象解构出来，这个data对象就是服务器返回的结果
         const {data} = await this.$http.post('login',this.LoginForm)
-        if (data.meta.status !== 200) return this.$message.error('账号或密码错误!');
-          this.$message.success('登录成功!')
+        if (data.meta.status !== 200) return this.error('账号或密码错误!');
+          this.success('登录成功!')
           // 1. 将登录成功之后的 token 保存到客户端的 sessionStorage 当中   
           //  这个 token 是为了验证用户是否登录成功，登录成功才可以去访问其他的 apl
           window.sessionStorage.setItem('token',data.data.token)
           // 2. 登录成功之后，跳转到 /home 页面
           this.$router.push('/home')
       })
+    },
+    success() {
+      this.$message({
+        showClose: true,
+        message: '恭喜你，登录成功',
+        type: 'success'
+      });
+    },
+    error() {
+      this.$message({
+        showClose: true,
+        message: '错了哦，用户名或密码有误',
+        type: 'error'
+      });
     }
   }
 }
