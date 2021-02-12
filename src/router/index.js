@@ -10,6 +10,7 @@ const Welcome = () => import('../components/welcome/Welcome')
 const Users = () => import('../components/home/user/Users')
 const Rights = () => import('../components/home/rights/Rights')
 const Roles = () => import('../components/home/rights/Roles')
+const Cate = () => import('../components/home/goods_cate/Cate')
 
 const routes = [
   {
@@ -40,6 +41,10 @@ const routes = [
       {
         path : '/roles',
         component : Roles
+      },
+      {
+        path : '/categories',
+        component : Cate
       }
     ]
   },

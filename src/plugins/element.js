@@ -27,7 +27,8 @@ import {
   Tag,
   Tree,
   Option,
-  Select
+  Select,
+  Cascader
 } from 'element-ui'
 
 Vue.use(Button)
@@ -56,6 +57,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 // 弹窗提示需要挂载到 vue 的 prototype  原型对象上
 Vue.prototype.$message = Message
 // 弹窗消息确认框
