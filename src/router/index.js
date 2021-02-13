@@ -11,6 +11,7 @@ const Users = () => import('../components/home/user/Users')
 const Rights = () => import('../components/home/rights/Rights')
 const Roles = () => import('../components/home/rights/Roles')
 const Cate = () => import('../components/home/goods_cate/Cate')
+const Params = () => import('../components/home/goods_params/Params')
 
 const routes = [
   {
@@ -45,6 +46,10 @@ const routes = [
       {
         path : '/categories',
         component : Cate
+      },
+      {
+        path : '/params',
+        component : Params
       }
     ]
   },
