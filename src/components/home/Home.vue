@@ -6,7 +6,7 @@
         <img src="../../assets/heima.png" alt="">
         <span>电商后台管理系统</span>
       </div>
-    <el-button type="primary" @click="logout" plain>退出</el-button>
+      <el-button type="primary" @click="logout" plain>退出</el-button>
     </el-header>
     <!-- 主体部分 -->
     <el-container>
