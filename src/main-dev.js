@@ -15,7 +15,7 @@ import 'quill/dist/quill.bubble.css'
 
 // 配置 axios
 import axios from 'axios'
-axios.defaults.baseURL = ' https://lianghj.top:8888/api/private/v1/'
+axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
 
 // 导入 Nprogress js 和 css文件
 import Nprogress from 'nprogress'
